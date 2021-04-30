@@ -28,7 +28,7 @@
                     <th>8</th>
                     <td class="light">
                       <button type="button" onclick="put(1,1)">
-                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="20px">
+                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
                       </button>
                     </td>
                     <td class="dark"></td>
