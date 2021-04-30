@@ -1,158 +1,166 @@
-<html>
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <style>
-            .chess-board { border-spacing: 0; border-collapse: collapse; }
-            .chess-board th { padding: .5em; }
-            .chess-board td { border: 1px solid; width: 2em; height: 2em; }
-            .chess-board .light { background: #eee; }
-            .chess-board .dark { background: #F8F8FF; }
-        </style>
-    </head>
-    <body>
-        <table class="chess-board">
-            <tbody>
-                <tr>
-                    <th></th>
-                    <th>a</th>
-                    <th>b</th>
-                    <th>c</th>
-                    <th>d</th>
-                    <th>e</th>
-                    <th>f</th>
-                    <th>g</th>
-                    <th>h</th>
-                </tr>
-                <tr>
-                    <th>8</th>
-                    <td class="light">
-                      <button type="button" onclick="put(1,1)">
-                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
-                      </button>
-                    </td>
-                    <td class="dark">
-                      <button type="button" onclick="putD(1,2)">
-                        <img id="r1c2" src="assets/empty-pawn.jpg" height="20px" width="30px">
-                      </button>
-                    </td>
-                    <td class="light">
-                      <button type="button" onclick="put(1,3)">
-                        <img id="r1c3" src="assets/empty-pawn.jpg" height="20px" width="30px">
-                      </button>
-                    </td>
-                    <td class="dark">
-                      <button type="button" onclick="put(1,4)">
-                        <img id="r1c4" src="assets/empty-pawn.jpg" height="20px" width="30px">
-                      </button>
-                    </td>
-                    <td class="light">
-                      <button type="button" onclick="put(1,5)">
-                        <img id="r1c5" src="assets/empty-pawn.jpg" height="20px" width="30px">
-                      </button>
-                    </td>
-                    <td class="dark">
-                      <button type="button" onclick="put(1,6)">
-                        <img id="r1c6" src="assets/empty-pawn.jpg" height="20px" width="30px">
-                      </button>
-                    </td>
-                    <td class="light">
-                      <button type="button" onclick="put(1,7)">
-                        <img id="r1c7" src="assets/empty-pawn.jpg" height="20px" width="30px">
-                      </button>
-                    </td>
-                    <td class="dark">
-                      <button type="button" onclick="put(1,8)">
-                        <img id="r1c8" src="assets/empty-pawn.jpg" height="20px" width="30px">
-                      </button>
-                    </td>
-                </tr>
-                <tr>
-                    <th>7</th>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                </tr>
-                <tr>
-                    <th>6</th>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                </tr>
-                <tr>
-                    <th>5</th>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                </tr>
-                <tr>
-                    <th>4</th>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                </tr>
-                <tr>
-                    <th>1</th>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                    <td class="dark"></td>
-                    <td class="light"></td>
-                </tr>
-            </tbody>
-        </table>
-      <script>
-        async function put(row, column) {
-          document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Chess Board with CSS Grid</title>
+
+
+    <style>
+        :root {
+            --chess-bg-color: #000;
+            --chessman-color: #e34234;
         }
-        async function putD(row, column) {
-          document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
+
+        body {
+            font-family: Helvetica, sans-serif;
+            text-align: center;
         }
-      </script>
-    </body>
+
+        .grid {
+            display: grid;
+            grid-gap: 0;
+            grid-template-columns: repeat(8, [col] 10vw);
+            grid-template-rows: repeat(8, [row] 10vw);
+            width: 80vw;
+            border: 3px solid #000;
+            box-shadow: 0 5px 8px #777;
+            justify-content: center;
+            align-content: center;
+            margin: 0 auto;
+
+        }
+
+        .grid b {
+            font-size: calc(5vw);
+            padding-top: 1vw;
+            text-align: center;
+        }
+
+        .grid b span {
+            color: var(--chessman-color);
+        }
+
+        .grid b:nth-child(-n+8):nth-child(even) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+8):nth-child(-n+16):nth-child(odd) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+17):nth-child(-n+24):nth-child(even) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+25):nth-child(-n+32):nth-child(odd) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+33):nth-child(-n+40):nth-child(even) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+41):nth-child(-n+48):nth-child(odd) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+49):nth-child(-n+56):nth-child(even) {
+            background: var(--chess-bg-color);
+        }
+
+        .grid b:nth-child(n+57):nth-child(-n+64):nth-child(odd) {
+            background: var(--chess-bg-color);
+        }
+
+        @supports not ((background: var(--chess-bg-color)) or (display: grid)) {
+            .warning {
+                display: block !important;
+            }
+        }
+
+        .warning {
+            color: crimson;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+  
+<p class="warning">Your browser does not support new CSS features. Please upgrade your browser.</p>
+
+<main class="grid">
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+    <b></b>
+
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+    <b><span></span></b>
+</main>
+
+</body>
 </html>
