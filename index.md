@@ -26,7 +26,11 @@
                 </tr>
                 <tr>
                     <th>8</th>
-                    <td class="light"></td>
+                    <td class="light">
+                      <button type="button" onclick="put(1,1)">
+                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="20px">
+                      </button>
+                    </td>
                     <td class="dark"></td>
                     <td class="light"></td>
                     <td class="dark"></td>
@@ -114,5 +118,10 @@
                 </tr>
             </tbody>
         </table>
+      <script>
+        async function put(row, column) {
+          document.getElementById("r"+row+"c"+column).src = "assets/white-pawn.jpg";
+        }
+      </script>
     </body>
 </html>
