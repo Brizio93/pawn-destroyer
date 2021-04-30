@@ -120,7 +120,7 @@
         </table>
       <script>
         async function put(row, column) {
-          document.getElementById("r"+row+"c"+column).src = "assets/white-pawn.jpg";
+          document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
         }
       </script>
     </body>
