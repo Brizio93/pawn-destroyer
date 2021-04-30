@@ -38,32 +38,32 @@
                     </td>
                     <td class="light">
                       <button type="button" onclick="put(1,3)">
-                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
+                        <img id="r1c3" src="assets/empty-pawn.jpg" height="20px" width="30px">
                       </button>
                     </td>
                     <td class="dark">
                       <button type="button" onclick="put(1,4)">
-                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
+                        <img id="r1c4" src="assets/empty-pawn.jpg" height="20px" width="30px">
                       </button>
                     </td>
                     <td class="light">
                       <button type="button" onclick="put(1,5)">
-                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
+                        <img id="r1c5" src="assets/empty-pawn.jpg" height="20px" width="30px">
                       </button>
                     </td>
                     <td class="dark">
                       <button type="button" onclick="put(1,6)">
-                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
+                        <img id="r1c6" src="assets/empty-pawn.jpg" height="20px" width="30px">
                       </button>
                     </td>
                     <td class="light">
                       <button type="button" onclick="put(1,7)">
-                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
+                        <img id="r1c7" src="assets/empty-pawn.jpg" height="20px" width="30px">
                       </button>
                     </td>
                     <td class="dark">
                       <button type="button" onclick="put(1,8)">
-                        <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
+                        <img id="r1c8" src="assets/empty-pawn.jpg" height="20px" width="30px">
                       </button>
                     </td>
                 </tr>
