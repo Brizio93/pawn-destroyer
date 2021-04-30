@@ -3,7 +3,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto auto;
-  background-color: #2196F3;
+  background-color: #000;
   padding: 10px;
 }
 .grid-item {
@@ -17,7 +17,11 @@
 <body>
 
 <div class="grid-container">
-  <div class="grid-item">1</div>
+  <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
   <div class="grid-item">2</div>
   <div class="grid-item">3</div>  
   <div class="grid-item">4</div>
