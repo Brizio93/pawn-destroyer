@@ -31,7 +31,11 @@
                         <img id="r1c1" src="assets/empty-pawn.jpg" height="20px" width="30px">
                       </button>
                     </td>
-                    <td class="dark"></td>
+                    <td class="dark">
+                      <button type="button" onclick="putD(1,2)">
+                        <img id="r1c2" src="assets/empty-pawn.jpg" height="20px" width="30px">
+                      </button>
+                    </td>
                     <td class="light"></td>
                     <td class="dark"></td>
                     <td class="light"></td>
@@ -121,6 +125,9 @@
       <script>
         async function put(row, column) {
           document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
+        }
+        async function put(row, column) {
+          document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
         }
       </script>
     </body>
