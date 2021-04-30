@@ -126,7 +126,7 @@
         async function put(row, column) {
           document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
         }
-        async function put(row, column) {
+        async function putD(row, column) {
           document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
         }
       </script>
