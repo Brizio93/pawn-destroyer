@@ -124,6 +124,46 @@
   </div>
   <div class="grid-item">
     <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/red-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+    <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/red-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
+      <img id="r1c1" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(1,1)">
       <img id="r1c1" src="assets/empty-pawn.jpg">
       </button>
   </div>
@@ -154,47 +194,7 @@
   </div>
   <div class="grid-item">
     <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-    <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
+      <img id="r1c1" src="assets/dark-pawn.jpg">
       </button>
   </div>
   <div class="grid-item">
