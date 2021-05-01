@@ -16,53 +16,9 @@
 </head>
 <body>
 <p id=info></p>
+<br>
 <img id="handCard1" width="70" height="70">
 <div class="grid-container">
-  <div class="grid-item">
-    <button type="button" onclick="put(1,1)">
-      <img id="r1c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,2)">
-      <img id="r1c2" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,3)">
-      <img id="r1c3" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,4)">
-      <img id="r1c4" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,5)">
-      <img id="r1c5" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,6)">
-      <img id="r1c6" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,7)">
-      <img id="r1c7" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-  <div class="grid-item">
-    <button type="button" onclick="put(1,8)">
-      <img id="r1c8" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
-    <div class="grid-item">
-    <button type="button" onclick="put(2,1)">
-      <img id="r2c1" src="assets/empty-pawn.jpg">
-      </button>
-  </div>
   <div class="grid-item">
     <button type="button" onclick="put(2,2)">
       <img id="r2c2" src="assets/empty-pawn.jpg">
@@ -98,12 +54,12 @@
       <img id="r2c8" src="assets/empty-pawn.jpg">
       </button>
   </div>
-    <div class="grid-item">
-    <button type="button" onclick="put(3,1)">
-      <img id="r3c1" src="assets/empty-pawn.jpg">
+  <div class="grid-item">
+    <button type="button" onclick="put(2,9)">
+      <img id="r2c9" src="assets/empty-pawn.jpg">
       </button>
   </div>
-  <div class="grid-item">
+    <div class="grid-item">
     <button type="button" onclick="put(3,2)">
       <img id="r3c2" src="assets/empty-pawn.jpg">
       </button>
@@ -138,12 +94,12 @@
       <img id="r3c8" src="assets/empty-pawn.jpg">
       </button>
   </div>
-    <div class="grid-item">
-    <button type="button" onclick="put(4,1)">
-      <img id="r4c1" src="assets/empty-pawn.jpg">
+  <div class="grid-item">
+    <button type="button" onclick="put(3,9)">
+      <img id="r3c9" src="assets/empty-pawn.jpg">
       </button>
   </div>
-  <div class="grid-item">
+    <div class="grid-item">
     <button type="button" onclick="put(4,2)">
       <img id="r4c2" src="assets/empty-pawn.jpg">
       </button>
@@ -178,12 +134,12 @@
       <img id="r4c8" src="assets/empty-pawn.jpg">
       </button>
   </div>
-    <div class="grid-item">
-    <button type="button" onclick="put(5,1)">
-      <img id="r5c1" src="assets/empty-pawn.jpg">
+  <div class="grid-item">
+    <button type="button" onclick="put(4,9)">
+      <img id="r4c9" src="assets/empty-pawn.jpg">
       </button>
   </div>
-  <div class="grid-item">
+    <div class="grid-item">
     <button type="button" onclick="put(5,2)">
       <img id="r5c2" src="assets/empty-pawn.jpg">
       </button>
@@ -218,12 +174,12 @@
       <img id="r5c8" src="assets/empty-pawn.jpg">
       </button>
   </div>
-    <div class="grid-item">
-    <button type="button" onclick="put(6,1)">
-      <img id="r6c1" src="assets/empty-pawn.jpg">
+  <div class="grid-item">
+    <button type="button" onclick="put(5,9)">
+      <img id="r5c9" src="assets/empty-pawn.jpg">
       </button>
   </div>
-  <div class="grid-item">
+    <div class="grid-item">
     <button type="button" onclick="put(6,2)">
       <img id="r6c2" src="assets/empty-pawn.jpg">
       </button>
@@ -258,12 +214,12 @@
       <img id="r6c8" src="assets/empty-pawn.jpg">
       </button>
   </div>
-    <div class="grid-item">
-    <button type="button" onclick="put(7,1)">
-      <img id="r7c1" src="assets/empty-pawn.jpg">
+  <div class="grid-item">
+    <button type="button" onclick="put(6,9)">
+      <img id="r6c9" src="assets/empty-pawn.jpg">
       </button>
   </div>
-  <div class="grid-item">
+    <div class="grid-item">
     <button type="button" onclick="put(7,2)">
       <img id="r7c2" src="assets/empty-pawn.jpg">
       </button>
@@ -298,12 +254,12 @@
       <img id="r7c8" src="assets/empty-pawn.jpg">
       </button>
   </div>
-    <div class="grid-item">
-    <button type="button" onclick="put(8,1)">
-      <img id="r8c1" src="assets/empty-pawn.jpg">
+  <div class="grid-item">
+    <button type="button" onclick="put(7,9)">
+      <img id="r7c9" src="assets/empty-pawn.jpg">
       </button>
   </div>
-  <div class="grid-item">
+    <div class="grid-item">
     <button type="button" onclick="put(8,2)">
       <img id="r8c2" src="assets/empty-pawn.jpg">
       </button>
@@ -330,12 +286,57 @@
   </div>
   <div class="grid-item">
     <button type="button" onclick="put(8,7)">
-      <img id="r8c7" src="assets/empty-pawn.jpg">
+      <img id="r8,7" src="assets/empty-pawn.jpg">
       </button>
   </div>
   <div class="grid-item">
     <button type="button" onclick="put(8,8)">
       <img id="r8c8" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(8,9)">
+      <img id="r8c9" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+    <div class="grid-item">
+    <button type="button" onclick="put(9,2)">
+      <img id="r9c2" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(9,3)">
+      <img id="r9c3" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(9,4)">
+      <img id="r9c4" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(9,5)">
+      <img id="r9c5" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(9,6)">
+      <img id="r9c6" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(9,7)">
+      <img id="r9c7" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(9,8)">
+      <img id="r9c8" src="assets/empty-pawn.jpg">
+      </button>
+  </div>
+  <div class="grid-item">
+    <button type="button" onclick="put(9,9)">
+      <img id="r9c9" src="assets/empty-pawn.jpg">
       </button>
   </div>
 </div>
@@ -354,16 +355,18 @@
   var currentCard = deck.pop()
   document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
   var grid = [
-  ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
-  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
-  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
-  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
-  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
-  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
-  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
-  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
-  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
-  ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
+  ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
+  ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
+  ["sentinel","sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel","sentinel"],
+  ["sentinel","sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel","sentinel"],
+  ["sentinel","sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel","sentinel"],
+  ["sentinel","sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel","sentinel"],
+  ["sentinel","sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel","sentinel"],
+  ["sentinel","sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel","sentinel"],
+  ["sentinel","sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel","sentinel"],
+  ["sentinel","sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel","sentinel"],
+  ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
+  ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
   ];
   enemySpawn();
   async function put(row, column) {
@@ -379,7 +382,6 @@
       }
       if(deck.length==0) {
         document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
-        document.getElementById("handCard1").src = "assets/empty-pawn.jpg";
       }
       else {
         enemySpawn();
