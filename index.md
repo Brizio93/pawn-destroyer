@@ -354,6 +354,13 @@
   deck = shuffle(deck);
   var currentCard = deck.pop()
   document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
+  var freeBoxes = [
+    [2,2],[2,3],[2,4],[2,5],[2,6],[2,7],[2,8],[2,9],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9],
+    [4,2],[4,3],[4,4],[4,5],[4,6],[4,7],[4,8],[4,9],[5,2],[5,3],[5,4],[5,5],[5,6],[5,7],[5,8],[5,9],
+    [6,2],[6,3],[6,4],[6,5],[6,6],[6,7],[6,8],[6,9],[7,2],[7,3],[7,4],[7,5],[7,6],[7,7],[7,8],[7,9],
+    [8,2],[8,3],[8,4],[8,5],[8,6],[8,7],[8,8],[8,9],[9,2],[9,3],[9,4],[9,5],[9,6],[9,7],[9,8],[9,9]
+  ];
+  freeBoxes = shuffle(freeBoxes);
   var grid = [
   ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
   ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
@@ -373,6 +380,7 @@
     if(grid[row][column]=="empty-pawn" && waitFlag==false) {
       waitFlag = true;
       grid[row][column] = "red-pawn";
+      updateFreeBoxes(row, column);
       document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
       if(currentCard=="circolar-attack") {
         circolarAttack(row, column, 1);
@@ -395,11 +403,13 @@
   async function circolarAttack(row, column, radius) {
     for(var i=row-radius; i<=row+radius; i++) {
       for(var j=column-radius; j<=column+radius; j++) {
-        if(!(i==row && j==column) && grid[i][j]!="sentinel"){
-          if(grid[i][j]=="dark-pawn"){
+        if(!(i==row && j==column) && grid[i][j]!="sentinel") {
+          if(grid[i][j]=="dark-pawn") {
+            updateFreeBoxes(i,j);
             points++;
           }
-          if(grid[i][j]=="red-pawn"){
+          if(grid[i][j]=="red-pawn") {
+            updateFreeBoxes(i,j);
             points--;
           }
           grid[i][j] = "fire-pawn";
@@ -426,7 +436,15 @@
       column = getRandomInt(1,8);
       if(grid[row][column]=="empty-pawn") {
         grid[row][column] = "dark-pawn";
+        updateFreeBoxes(row, column);
         document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
+      }
+    }
+  }
+  function updateFreeBoxes(row, column){
+    for(var i=0; i<freeBoxes.length; i++) {
+      if(freeBoxes[i][0]==row && freeBoxes[i][1]==column) {
+        freeBoxes.splice(i, 1);
       }
     }
   }
