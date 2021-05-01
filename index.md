@@ -418,7 +418,7 @@
                 unmarkBox(i,j);
                 points--;
               }
-              grid[i][j]=="fire-pawn"
+              grid[i][j]="fire-pawn";
               document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
             }
           }
