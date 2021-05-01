@@ -393,7 +393,7 @@
         document.getElementById("handCard1").src = "assets/empty-pawn.jpg";
       }
       else {
-        enemySpawn();
+        //enemySpawn();
         currentCard = deck.pop();
         document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
         waitFlag = false;
