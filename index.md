@@ -419,6 +419,7 @@
       }
     }
     await new Promise(r => setTimeout(r, 500));
+    console.log("fiamme via");
     for(var i=row-radius; i<=row+radius; i++) {
       for(var j=column-radius; j<=column+radius; j++) {
         if(!(i==row && j==column) && grid[i][j]!="sentinel"){
@@ -437,7 +438,6 @@
       row = target[0];
       column = target[1]
       grid[row][column] = "dark-pawn";
-      markBox(row, column);
       document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
     }
   }
