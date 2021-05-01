@@ -398,7 +398,7 @@
         console.log(currentHandCard);
       }
       async function put(row, column) {
-        if(grid[row][column]=="empty-pawn" && waitFlag==false) {
+        if(grid[row][column]=="empty-pawn" && currentCard!="empty-attack" && waitFlag==false) {
           waitFlag = true;
           grid[row][column] = "red-pawn";
           markBox(row, column);
