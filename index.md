@@ -426,14 +426,18 @@
           }
         }
       }
-      function horizontalAttack(row, column) {
-        for(var j=2; j<=9 && j!=column; j++) {
-          destroyPawn(row,j);
+      function verticalAttack(row, column) {
+        for(var j=2; j<=9; j++) {
+          if(j!=column){
+            destroyPawn(row,j);
+          }
         }
       }
-      function verticalAttack(row, column) {
-        for(var i=2; i<=9 && i!=row; i++) {
-          destroyPawn(i,column);
+      function horizontalAttack(row, column) {
+        for(var i=2; i<=9; i++) {
+          if(i!=row){
+            destroyPawn(i,column);
+          }
         }
       }
       function destroyPawn(row, column) {
