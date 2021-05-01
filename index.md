@@ -339,8 +339,41 @@
   </div>
 </div>
 <script>
+  var grid = [
+  ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
+  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
+  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
+  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
+  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
+  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
+  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
+  ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
+  ];
+  enemySpawn();
   async function put(row, column) {
-    document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
+    if(grid[row][column]=="empty-pawn") {
+      grid[row][column] = "red-pawn";
+      document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
+      enemySpawn();
+    }
+  }
+  function enemySpawn() {  //generate up to 3 new enemies in random positions
+    var row;
+    var column;
+    for(var i=0; i<3; i++) {
+      row = getRandomInt(1,8);
+      column = getRandomInt(1,8);
+      console.log(row + " " + column);
+      if(grid[row][column]=="empty-pawn") {
+        grid[row][column] = "dark-pawn";
+        document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
+      }
+    }
+  }
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 </script>
 </body>
