@@ -387,7 +387,7 @@
       ];
       enemySpawn();
       function select(card) {
-        card.style.border = "1px solid black";
+        card.style.border = "1px solid red";
       }
       async function put(row, column) {
         if(grid[row][column]=="empty-pawn" && waitFlag==false) {
