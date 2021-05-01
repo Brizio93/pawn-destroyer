@@ -1,5 +1,11 @@
 <head>
    <style>
+      .center {
+      margin: auto;
+      width: 60%;
+      border: 3px solid #000000;
+      padding: 10px;
+      }
       .grid-container {
       display: grid;
       grid-template-columns: auto auto auto auto auto auto auto auto;
@@ -15,10 +21,12 @@
    </style>
 </head>
 <body>
-   <p id=info></p>
-   <img id="handCard1" width="70" height="70">
-   <img id="handCard2" src="assets/empty-attack.jpg" width="70" height="70">
-   <img id="handCard3" src="assets/empty-attack.jpg" width="70" height="70">
+   <div class="center">
+     <p id=info></p>
+     <img id="handCard1" width="70" height="70">
+     <img id="handCard2" src="assets/empty-attack.jpg" width="70" height="70">
+     <img id="handCard3" src="assets/empty-attack.jpg" width="70" height="70">
+   </div>
    <div class="grid-container">
       <div class="grid-item">
          <button type="button" onclick="put(2,2)">
