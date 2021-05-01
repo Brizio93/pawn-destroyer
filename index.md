@@ -350,6 +350,7 @@
    </div>
    <script>
       var waitFlag = false;
+      var endGameFlag = 0;
       var points = 0;
       document.getElementById("info").innerHTML = "Carte nel mazzo: 27 - Punteggio: 0";
       var deck = [
@@ -405,15 +406,21 @@
           useAttack(row, column);
           await new Promise(r => setTimeout(r, 500));
           extinguishFlames();
-          if(deck.length==0) {
+          if(endGameFlag==2) {
+            document.getElementById(currentEndCard).src = "assets/empty-attack.jpg";
             document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
-            document.getElementById("handCard1").src = "assets/empty-attack.jpg";
           }
           else {
             enemySpawn();
-            currentCard = deck.pop();
-            document.getElementById("info").innerHTML = "Carte nel mazzo: " + deck.length + " - Punteggio: " + points;
-            document.getElementById(currentHandCard).src = "assets/" + currentCard + ".jpg";
+            if(deck.length==0) {
+              document.getElementById(currentHandCard).src = "assets/empty-attack.jpg";
+              endGameFlag++;
+            }
+            else {
+              currentCard = deck.pop();
+              document.getElementById("info").innerHTML = "Carte nel mazzo: " + deck.length + " - Punteggio: " + points;
+              document.getElementById(currentHandCard).src = "assets/" + currentCard + ".jpg";
+            }
             waitFlag = false;
           }
         }
