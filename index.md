@@ -351,7 +351,7 @@
    <script>
       var waitFlag = false;
       var points = 0;
-      document.getElementById("info").innerHTML = "Carte rimanenti: 30 - Punteggio: 0";
+      document.getElementById("info").innerHTML = "Carte nel mazzo: 27 - Punteggio: 0";
       var deck = [
         "big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack",
         "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
