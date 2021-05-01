@@ -356,7 +356,18 @@
     if(grid[row][column]=="empty-pawn") {
       grid[row][column] = "red-pawn";
       document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
+      attack(row, column);
       enemySpawn();
+    }
+  }
+  function attack(row, column) {
+    for(var i=row-1; i<=row+1; i++) {
+      for(var j=column-1; j<=column+1; j++) {
+        if(!(i==row && j==column)){
+          grid[i][j] = "fire-pawn";
+          document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
+        }
+      }
     }
   }
   function enemySpawn() {  //generate up to 3 new enemies in random positions
