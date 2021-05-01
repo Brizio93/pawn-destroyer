@@ -286,7 +286,7 @@
   </div>
   <div class="grid-item">
     <button type="button" onclick="put(8,7)">
-      <img id="r8,7" src="assets/empty-pawn.jpg">
+      <img id="r8c7" src="assets/empty-pawn.jpg">
       </button>
   </div>
   <div class="grid-item">
