@@ -393,7 +393,7 @@
             document.getElementById("handCard1").src = "assets/empty-pawn.jpg";
           }
           else {
-            //enemySpawn();
+            enemySpawn();
             currentCard = deck.pop();
             document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
             waitFlag = false;
@@ -412,7 +412,6 @@
                 unmarkBox(i,j);
                 points--;
               }
-              grid[i][j] = "fire-pawn";
               document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
               document.getElementById("info").innerHTML = "Carte rimanenti: " + deck.length + " - Punteggio: " + points;
             }
