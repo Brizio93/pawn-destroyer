@@ -382,8 +382,7 @@
           grid[row][column] = "red-pawn";
           markBox(row, column);
           document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
-          console.log("il bottone funziona");
-          useAttack();
+          useAttack(row, column);
           await new Promise(r => setTimeout(r, 500));
           extinguishFlames();
           if(deck.length==0) {
@@ -393,15 +392,14 @@
           else {
             enemySpawn();
             currentCard = deck.pop();
+            document.getElementById("info").innerHTML = "Carte rimanenti: " + deck.length + " - Punteggio: " + points;
             document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
             waitFlag = false;
           }
         }
       }
-      function useAttack() {
-        console.log("sto scegliendo l'attacco " + currentCard);
+      function useAttack(row, column) {
         if(currentCard=="circolar-attack") {
-          console.log("sto per usare l'attacco circolar-attack");
           circolarAttack(row, column, 1);
         }
         if(currentCard=="big-circolar-attack") {
@@ -409,7 +407,6 @@
         }
       }
       function circolarAttack(row, column, radius) {
-        console.log("sto usando l'attacco");
         for(var i=row-radius; i<=row+radius; i++) {
           for(var j=column-radius; j<=column+radius; j++) {
             if(!(i==row && j==column) && grid[i][j]!="sentinel") {
@@ -423,7 +420,6 @@
               }
               grid[i][j]=="fire-pawn"
               document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
-              document.getElementById("info").innerHTML = "Carte rimanenti: " + deck.length + " - Punteggio: " + points;
             }
           }
         }
