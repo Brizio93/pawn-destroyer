@@ -2,8 +2,7 @@
    <style>
       .center {
       margin: auto;
-      width: 60%;
-      border: 3px solid #000000;
+      width: 80%;
       padding: 10px;
       }
       .grid-container {
