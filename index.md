@@ -382,6 +382,7 @@
           grid[row][column] = "red-pawn";
           markBox(row, column);
           document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
+          console.log("il bottone funziona");
           useAttack();
           await new Promise(r => setTimeout(r, 500));
           extinguishFlames();
@@ -398,14 +399,17 @@
         }
       }
       function useAttack() {
+        console.log("sto scegliendo l'attacco " + currentCard);
         if(currentCard=="circolar-attack") {
-            circolarAttack(row, column, 1);
-          }
+          console.log("sto per usare l'attacco circolar-attack");
+          circolarAttack(row, column, 1);
+        }
         if(currentCard=="big-circolar-attack") {
-            circolarAttack(row, column, 2);
+          circolarAttack(row, column, 2);
         }
       }
       function circolarAttack(row, column, radius) {
+        console.log("sto usando l'attacco");
         for(var i=row-radius; i<=row+radius; i++) {
           for(var j=column-radius; j<=column+radius; j++) {
             if(!(i==row && j==column) && grid[i][j]!="sentinel") {
