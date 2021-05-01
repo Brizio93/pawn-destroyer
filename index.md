@@ -429,16 +429,16 @@
     }
   }
   function enemySpawn() {  //generate up to 3 new enemies in random positions
+    var target;
     var row;
     var column;
     for(var i=0; i<3; i++) {
-      row = getRandomInt(1,8);
-      column = getRandomInt(1,8);
-      if(grid[row][column]=="empty-pawn") {
-        grid[row][column] = "dark-pawn";
-        updateFreeBoxes(row, column);
-        document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
-      }
+      target = freeBoxes.pop();
+      row = target[0];
+      column = target[1]
+      grid[row][column] = "dark-pawn";
+      updateFreeBoxes(row, column);
+      document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
     }
   }
   function updateFreeBoxes(row, column){
