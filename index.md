@@ -23,8 +23,8 @@
    <div class="center">
      <p id=info></p>
      <img id="handCard1" width="70" height="70">
-     <img id="handCard2" src="assets/empty-attack.jpg" width="70" height="70">
-     <img id="handCard3" src="assets/empty-attack.jpg" width="70" height="70">
+     <img id="handCard2" width="70" height="70">
+     <img id="handCard3" width="70" height="70">
    </div>
    <div class="grid-container">
       <div class="grid-item">
@@ -362,6 +362,8 @@
       deck = shuffle(deck);
       var currentCard = deck.pop();
       document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
+      document.getElementById("handCard2").src = "assets/" + deck.pop() + ".jpg";
+      document.getElementById("handCard3").src = "assets/" + deck.pop() + ".jpg";
       var freeBoxes = [
         [2,2],[2,3],[2,4],[2,5],[2,6],[2,7],[2,8],[2,9],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9],
         [4,2],[4,3],[4,4],[4,5],[4,6],[4,7],[4,8],[4,9],[5,2],[5,3],[5,4],[5,5],[5,6],[5,7],[5,8],[5,9],
