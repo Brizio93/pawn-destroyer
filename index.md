@@ -382,6 +382,7 @@
       }
       if(deck.length==0) {
         document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
+        document.getElementById("handCard1").src = "assets/empty-pawn.jpg";
       }
       else {
         enemySpawn();
