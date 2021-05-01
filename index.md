@@ -348,9 +348,9 @@
       var deck = [
         "big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack",
         "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
-        "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
-        "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
-        "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack"
+        "horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack",
+        "vertical-attack","vertical-attack","vertical-attack","vertical-attack","vertical-attack","vertical-attack",
+        "cross-attack","cross-attack","cross-attack","cross-attack","cross-attack","cross-attack"
       ]
       deck = shuffle(deck);
       var currentCard = deck.pop();
@@ -406,24 +406,47 @@
         if(currentCard=="big-circolar-attack") {
           circolarAttack(row, column, 2);
         }
+        if(currentCard=="horizontal-attack") {
+          horizontalAttack(row, column);
+        }
+        if(currentCard=="vertical-attack") {
+          verticalAttack(row, column);
+        }
+        if(currentCard=="cross-attack") {
+          horizontalAttack(row, column);
+          verticalAttack(row, column);
+        }
       }
       function circolarAttack(row, column, radius) {
         for(var i=row-radius; i<=row+radius; i++) {
           for(var j=column-radius; j<=column+radius; j++) {
             if(!(i==row && j==column) && grid[i][j]!="sentinel") {
-              if(grid[i][j]=="dark-pawn") {
-                unmarkBox(i,j);
-                points++;
-              }
-              if(grid[i][j]=="red-pawn") {
-                unmarkBox(i,j);
-                points--;
-              }
-              grid[i][j]="fire-pawn";
-              document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
+              destroyPawn(i,j);
             }
           }
         }
+      }
+      function horizontalAttack(row, column) {
+        for(var j=2; j<=9 && j!=column; j++) {
+          destroyPawn(row,j);
+        }
+      }
+      function verticalAttack(row, column) {
+        for(var i=2; i<=9 && i!=row; i++) {
+          destroyPawn(i,column);
+        }
+      }
+      function destroyPawn(row, column) {
+        if(grid[row][column]=="dark-pawn") {
+          unmarkBox(row,column);
+          points++;
+        }
+        if(grid[row][column]=="red-pawn") {
+          unmarkBox(row,column);
+          points--;
+        }
+        grid[row][column]="fire-pawn";
+        document.getElementById("r"+row+"c"+column).src = "assets/fire-pawn.jpg";
       }
       function extinguishFlames() {
         for(var i=2; i<=9; i++) {
