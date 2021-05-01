@@ -16,8 +16,9 @@
 </head>
 <body>
    <p id=info></p>
-   <br>
    <img id="handCard1" width="70" height="70">
+   <img id="handCard2" src="assets/empty-attack.jpg" width="70" height="70">
+   <img id="handCard3" src="assets/empty-attack.jpg" width="70" height="70">
    <div class="grid-container">
       <div class="grid-item">
          <button type="button" onclick="put(2,2)">
