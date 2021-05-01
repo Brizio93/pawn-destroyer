@@ -376,7 +376,7 @@
       ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
       ];
       enemySpawn();
-      async function put(row, column) {
+      function put(row, column) {
         if(grid[row][column]=="empty-pawn" && waitFlag==false) {
           waitFlag = true;
           grid[row][column] = "red-pawn";
