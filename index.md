@@ -414,12 +414,13 @@
             enemySpawn();
             if(deck.length==0) {
               document.getElementById(currentHandCard).src = "assets/empty-attack.jpg";
+              document.getElementById("info").innerHTML = "Carte nel mazzo finite - Punteggio: " + points;
               endGameFlag++;
             }
             else {
               currentCard = deck.pop();
-              document.getElementById("info").innerHTML = "Carte nel mazzo: " + deck.length + " - Punteggio: " + points;
               document.getElementById(currentHandCard).src = "assets/" + currentCard + ".jpg";
+              document.getElementById("info").innerHTML = "Carte nel mazzo: " + deck.length + " - Punteggio: " + points;
             }
             waitFlag = false;
           }
