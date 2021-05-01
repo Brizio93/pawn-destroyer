@@ -412,7 +412,7 @@
           else {
             enemySpawn();
             currentCard = deck.pop();
-            document.getElementById("info").innerHTML = "Carte rimanenti: " + deck.length + " - Punteggio: " + points;
+            document.getElementById("info").innerHTML = "Carte nel mazzo: " + deck.length + " - Punteggio: " + points;
             document.getElementById(currentHandCard).src = "assets/" + currentCard + ".jpg";
             waitFlag = false;
           }
