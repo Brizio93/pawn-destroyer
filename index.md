@@ -16,7 +16,6 @@
 </head>
 <body>
 <p id=info></p>
-<br>
 <img id="handCard1" width="70" height="70">
 <div class="grid-container">
   <div class="grid-item">
