@@ -376,18 +376,15 @@
       ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
       ];
       enemySpawn();
-      function put(row, column) {
+      async function put(row, column) {
         if(grid[row][column]=="empty-pawn" && waitFlag==false) {
           waitFlag = true;
           grid[row][column] = "red-pawn";
           markBox(row, column);
           document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
-          if(currentCard=="circolar-attack") {
-            circolarAttack(row, column, 1);
-          }
-          if(currentCard=="big-circolar-attack") {
-            circolarAttack(row, column, 2);
-          }
+          useAttack();
+          await new Promise(r => setTimeout(r, 500));
+          extinguishFlames();
           if(deck.length==0) {
             document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
             document.getElementById("handCard1").src = "assets/empty-pawn.jpg";
@@ -400,7 +397,15 @@
           }
         }
       }
-      async function circolarAttack(row, column, radius) {
+      function useAttack() {
+        if(currentCard=="circolar-attack") {
+            circolarAttack(row, column, 1);
+          }
+        if(currentCard=="big-circolar-attack") {
+            circolarAttack(row, column, 2);
+        }
+      }
+      function circolarAttack(row, column, radius) {
         for(var i=row-radius; i<=row+radius; i++) {
           for(var j=column-radius; j<=column+radius; j++) {
             if(!(i==row && j==column) && grid[i][j]!="sentinel") {
@@ -412,15 +417,17 @@
                 unmarkBox(i,j);
                 points--;
               }
+              grid[i][j]=="fire-pawn"
               document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
               document.getElementById("info").innerHTML = "Carte rimanenti: " + deck.length + " - Punteggio: " + points;
             }
           }
         }
-        await new Promise(r => setTimeout(r, 500));
-        for(var i=row-radius; i<=row+radius; i++) {
-          for(var j=column-radius; j<=column+radius; j++) {
-            if(!(i==row && j==column) && grid[i][j]!="sentinel"){
+      }
+      funcion extinguishFlames() {
+        for(var i=2; i<=9; i++) {
+          for(var j=2; j<=9; j++) {
+            if(grid[i][j]=="fire-pawn"){
               grid[i][j] = "empty-pawn";
               document.getElementById("r"+i+"c"+j).src = "assets/empty-pawn.jpg";
             }
