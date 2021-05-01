@@ -353,7 +353,7 @@
         "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack"
       ]
       deck = shuffle(deck);
-      var currentCard = deck.pop()
+      var currentCard = deck.pop();
       document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
       var freeBoxes = [
         [2,2],[2,3],[2,4],[2,5],[2,6],[2,7],[2,8],[2,9],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9],
@@ -442,7 +442,7 @@
         for(var i=0; i<3; i++) {
           target = freeBoxes.pop();
           row = target[0];
-          column = target[1]
+          column = target[1];
           grid[row][column] = "dark-pawn";
           document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
         }
