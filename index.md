@@ -407,12 +407,13 @@
           await new Promise(r => setTimeout(r, 500));
           extinguishFlames();
           if(endGameFlag==2) {
-            document.getElementById(currentEndCard).src = "assets/empty-attack.jpg";
+            document.getElementById(currentHandCard).src = "assets/empty-attack.jpg";
             document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
           }
           else {
             enemySpawn();
             if(deck.length==0) {
+              currentCard = empty-attack;
               document.getElementById(currentHandCard).src = "assets/empty-attack.jpg";
               document.getElementById("info").innerHTML = "Carte nel mazzo finite - Punteggio: " + points;
               endGameFlag++;
