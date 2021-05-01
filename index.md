@@ -15,7 +15,7 @@
 </style>
 </head>
 <body>
-
+<p id=info></p>
 <div class="grid-container">
   <div class="grid-item">
     <button type="button" onclick="put(1,1)">
@@ -339,6 +339,18 @@
   </div>
 </div>
 <script>
+  var waitFlag = false;
+  var points = 0;
+  document.getElementById("info").innerHTML = "Punteggio: 0";
+  var deck = [
+    "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
+    "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
+    "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
+    "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
+    "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack"
+  ]
+  deck = shuffle(deck);
+  var currentCard = deck.pop()
   var grid = [
   ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
   ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
@@ -353,19 +365,34 @@
   ];
   enemySpawn();
   async function put(row, column) {
-    if(grid[row][column]=="empty-pawn") {
+    if(grid[row][column]=="empty-pawn" && waitFlag==false) {
+      waitFlag = true;
       grid[row][column] = "red-pawn";
       document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
-      attack(row, column);
-      enemySpawn();
+      circolarAttack(row, column);
+      if(deck.length==0) {
+        document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
+      }
+      else {
+        enemySpawn();
+        currentCard = deck.pop();
+        waitFlag = false;
+      }
     }
   }
-  async function attack(row, column) {
+  async function circolarAttack(row, column) {
     for(var i=row-1; i<=row+1; i++) {
       for(var j=column-1; j<=column+1; j++) {
         if(!(i==row && j==column) && grid[i][j]!="sentinel"){
+          if(grid[i][j]=="dark-pawn"){
+            points++;
+          }
+          if(grid[i][j]=="red-pawn"){
+            points--;
+          }
           grid[i][j] = "fire-pawn";
           document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
+          document.getElementById("info").innerHTML = "Punteggio: " + points;
         }
       }
     }
@@ -385,7 +412,6 @@
     for(var i=0; i<3; i++) {
       row = getRandomInt(1,8);
       column = getRandomInt(1,8);
-      console.log(row + " " + column);
       if(grid[row][column]=="empty-pawn") {
         grid[row][column] = "dark-pawn";
         document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
@@ -396,6 +422,17 @@
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
   }
 </script>
 </body>
