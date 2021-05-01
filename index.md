@@ -419,7 +419,6 @@
       }
     }
     await new Promise(r => setTimeout(r, 500));
-    console.log("fiamme via");
     for(var i=row-radius; i<=row+radius; i++) {
       for(var j=column-radius; j<=column+radius; j++) {
         if(!(i==row && j==column) && grid[i][j]!="sentinel"){
