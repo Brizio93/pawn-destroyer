@@ -387,6 +387,9 @@
       ];
       enemySpawn();
       function select(card) {
+        document.getElementById("handCard1").style.border = "";
+        document.getElementById("handCard2").style.border = "";
+        document.getElementById("handCard3").style.border = "";
         card.style.border = "2px solid red";
       }
       async function put(row, column) {
