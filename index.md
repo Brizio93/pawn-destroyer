@@ -363,7 +363,7 @@
   async function attack(row, column) {
     for(var i=row-1; i<=row+1; i++) {
       for(var j=column-1; j<=column+1; j++) {
-        if(!(i==row && j==column)){
+        if(!(i==row && j==column) && grid[i][j]!="sentinel"){
           grid[i][j] = "fire-pawn";
           document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
         }
@@ -372,7 +372,7 @@
     await new Promise(r => setTimeout(r, 500));
     for(var i=row-1; i<=row+1; i++) {
       for(var j=column-1; j<=column+1; j++) {
-        if(!(i==row && j==column)){
+        if(!(i==row && j==column) && grid[i][j]!="sentinel"){
           grid[i][j] = "empty-pawn";
           document.getElementById("r"+i+"c"+j).src = "assets/empty-pawn.jpg";
         }
