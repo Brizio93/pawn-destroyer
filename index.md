@@ -22,9 +22,9 @@
 <body>
    <div class="center">
      <p id=info></p>
-     <img id="handCard1" width="70" height="70">
-     <img id="handCard2" width="70" height="70">
-     <img id="handCard3" width="70" height="70">
+     <img id="handCard1" width="70" height="70" onclick="select(this)">
+     <img id="handCard2" width="70" height="70" onclick="select(this)">
+     <img id="handCard3" width="70" height="70" onclick="select(this)">
    </div>
    <div class="grid-container">
       <div class="grid-item">
