@@ -16,6 +16,8 @@
 </head>
 <body>
 <p id=info></p>
+<br>
+<img id="handCard1" width="70" height="70">
 <div class="grid-container">
   <div class="grid-item">
     <button type="button" onclick="put(1,1)">
@@ -343,7 +345,7 @@
   var points = 0;
   document.getElementById("info").innerHTML = "Carte rimanenti: 30 - Punteggio: 0";
   var deck = [
-    "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
+    "big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack",
     "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
     "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
     "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
@@ -351,6 +353,7 @@
   ]
   deck = shuffle(deck);
   var currentCard = deck.pop()
+  document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
   var grid = [
   ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
   ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
@@ -369,20 +372,26 @@
       waitFlag = true;
       grid[row][column] = "red-pawn";
       document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
-      circolarAttack(row, column);
+      if(currentCard=="circolar-attack") {
+        circolarAttack(row, column, 1);
+      }
+      if(currentCard=="big-circolar-attack") {
+        circolarAttack(row, column, 2);
+      }
       if(deck.length==0) {
         document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
       }
       else {
         enemySpawn();
         currentCard = deck.pop();
+        document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
         waitFlag = false;
       }
     }
   }
-  async function circolarAttack(row, column) {
-    for(var i=row-1; i<=row+1; i++) {
-      for(var j=column-1; j<=column+1; j++) {
+  async function circolarAttack(row, column, radius) {
+    for(var i=row-radius; i<=row+radius; i++) {
+      for(var j=column-radius; j<=column+radius; j++) {
         if(!(i==row && j==column) && grid[i][j]!="sentinel"){
           if(grid[i][j]=="dark-pawn"){
             points++;
@@ -397,8 +406,8 @@
       }
     }
     await new Promise(r => setTimeout(r, 500));
-    for(var i=row-1; i<=row+1; i++) {
-      for(var j=column-1; j<=column+1; j++) {
+    for(var i=row-radius; i<=row+radius; i++) {
+      for(var j=column-radius; j<=column+radius; j++) {
         if(!(i==row && j==column) && grid[i][j]!="sentinel"){
           grid[i][j] = "empty-pawn";
           document.getElementById("r"+i+"c"+j).src = "assets/empty-pawn.jpg";
