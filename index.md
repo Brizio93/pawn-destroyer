@@ -341,7 +341,7 @@
 <script>
   var waitFlag = false;
   var points = 0;
-  document.getElementById("info").innerHTML = "Punteggio: 0";
+  document.getElementById("info").innerHTML = "Carte rimanenti: 30 - Punteggio: 0";
   var deck = [
     "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
     "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
@@ -392,7 +392,7 @@
           }
           grid[i][j] = "fire-pawn";
           document.getElementById("r"+i+"c"+j).src = "assets/fire-pawn.jpg";
-          document.getElementById("info").innerHTML = "Punteggio: " + points;
+          document.getElementById("info").innerHTML = "Carte rimanenti: " + deck.length + " - Punteggio: " + points;
         }
       }
     }
