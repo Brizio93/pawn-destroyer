@@ -424,7 +424,7 @@
           }
         }
       }
-      funcion extinguishFlames() {
+      function extinguishFlames() {
         for(var i=2; i<=9; i++) {
           for(var j=2; j<=9; j++) {
             if(grid[i][j]=="fire-pawn"){
