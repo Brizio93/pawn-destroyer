@@ -449,7 +449,7 @@
     }
   }
   function unmarkBox(row, column){
-    freeBoxes.add([row,column]);
+    freeBoxes.push([row,column]);
     freeBoxes = shuffle(freeBoxes);
   }
   function getRandomInt(min, max) {
