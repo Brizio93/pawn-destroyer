@@ -347,6 +347,8 @@
   ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
   ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
   ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
+  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
+  ["sentinel","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","empty-pawn","sentinel"],
   ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
   ];
   enemySpawn();
