@@ -380,7 +380,7 @@
     if(grid[row][column]=="empty-pawn" && waitFlag==false) {
       waitFlag = true;
       grid[row][column] = "red-pawn";
-      updateFreeBoxes(row, column);
+      markBox(row, column);
       document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
       if(currentCard=="circolar-attack") {
         circolarAttack(row, column, 1);
@@ -405,11 +405,11 @@
       for(var j=column-radius; j<=column+radius; j++) {
         if(!(i==row && j==column) && grid[i][j]!="sentinel") {
           if(grid[i][j]=="dark-pawn") {
-            updateFreeBoxes(i,j);
+            unmarkBox(i,j);
             points++;
           }
           if(grid[i][j]=="red-pawn") {
-            updateFreeBoxes(i,j);
+            unmarkBox(i,j);
             points--;
           }
           grid[i][j] = "fire-pawn";
@@ -437,16 +437,20 @@
       row = target[0];
       column = target[1]
       grid[row][column] = "dark-pawn";
-      updateFreeBoxes(row, column);
+      markBox(row, column);
       document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
     }
   }
-  function updateFreeBoxes(row, column){
+  function markBox(row, column){
     for(var i=0; i<freeBoxes.length; i++) {
       if(freeBoxes[i][0]==row && freeBoxes[i][1]==column) {
         freeBoxes.splice(i, 1);
       }
     }
+  }
+  function unmarkBox(row, column){
+    freeBoxes.add([row,column]);
+    freeBoxes = shuffle(freeBoxes);
   }
   function getRandomInt(min, max) {
     min = Math.ceil(min);
