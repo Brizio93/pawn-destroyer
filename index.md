@@ -361,6 +361,7 @@
       ]
       deck = shuffle(deck);
       var currentCard = deck.pop();
+      var currentHandCard = "handCard1";
       document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
       document.getElementById("handCard2").src = "assets/" + deck.pop() + ".jpg";
       document.getElementById("handCard3").src = "assets/" + deck.pop() + ".jpg";
@@ -390,7 +391,10 @@
         document.getElementById("handCard1").style.border = "";
         document.getElementById("handCard2").style.border = "";
         document.getElementById("handCard3").style.border = "";
-        card.style.border = "2px solid red";
+        card.style.border = "1px solid red";
+        currentCard = card.src.split("/")[5].split(".")[0];
+        currentHandCard = card.id;
+        console.log(currentHandCard);
       }
       async function put(row, column) {
         if(grid[row][column]=="empty-pawn" && waitFlag==false) {
@@ -409,7 +413,7 @@
             enemySpawn();
             currentCard = deck.pop();
             document.getElementById("info").innerHTML = "Carte rimanenti: " + deck.length + " - Punteggio: " + points;
-            document.getElementById("handCard1").src = "assets/" + currentCard + ".jpg";
+            document.getElementById(currentHandCard).src = "assets/" + currentCard + ".jpg";
             waitFlag = false;
           }
         }
