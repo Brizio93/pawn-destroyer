@@ -354,11 +354,11 @@
       var points = 0;
       document.getElementById("info").innerHTML = "Carte nel mazzo: 27 - Punteggio: 0";
       var deck = [
-        "big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","diagonal-attack",
-        "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","diagonal-attack",
-        "horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack","diagonal-attack",
-        "vertical-attack","vertical-attack","vertical-attack","vertical-attack","vertical-attack","diagonal-attack",
-        "cross-attack","cross-attack","cross-attack","cross-attack","cross-attack","diagonal-attack"
+        "big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","doublediagonal-attack","diagonal-attack",
+        "circolar-attack","circolar-attack","circolar-attack","circolar-attack","doublediagonal-attack","diagonal-attack",
+        "horizontal-attack","horizontal-attack","horizontal-attack","doublediagonal-attack","antidiagonal-attack","diagonal-attack",
+        "vertical-attack","vertical-attack","vertical-attack","vertical-attack","antidiagonal-attack","diagonal-attack",
+        "cross-attack","cross-attack","cross-attack","cross-attack","antidiagonal-attack","antidiagonal-attack"
       ]
       deck = shuffle(deck);
       var currentCard = deck.pop();
@@ -450,6 +450,13 @@
         if(currentCard=="diagonal-attack") {
           diagonalAttack(row, column);
         }
+        if(currentCard=="antidiagonal-attack") {
+          antiDiagonalAttack(row, column);
+        }
+        if(currentCard=="doublediagonal-attack") {
+          diagonalAttack(row, column);
+          antiDiagonalAttack(row, column);
+        }
       }
       function circolarAttack(row, column, radius) {
         for(var i=row-radius; i<=row+radius; i++) {
@@ -485,6 +492,18 @@
           destroyPawn(row+i,column+i);
           i++;
         } while(grid[row+i][column+i]!="sentinel");
+      }
+      function antiDiagonalAttack(row, column) {
+        var i = 1;
+        do {
+          destroyPawn(row-i,column+i);
+          i++;
+        } while(grid[row-i][column+i]!="sentinel");
+        i = 1
+        do {
+          destroyPawn(row+i,column-i);
+          i++;
+        } while(grid[row+i][column-i]!="sentinel");
       }
       function destroyPawn(row, column) {
         if(grid[row][column]=="dark-pawn") {
