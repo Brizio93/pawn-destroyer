@@ -413,7 +413,7 @@
           else {
             enemySpawn();
             if(deck.length==0) {
-              currentCard = empty-attack;
+              currentCard = "empty-attack";
               document.getElementById(currentHandCard).src = "assets/empty-attack.jpg";
               document.getElementById("info").innerHTML = "Carte nel mazzo finite - Punteggio: " + points;
               endGameFlag++;
