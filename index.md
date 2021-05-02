@@ -497,7 +497,7 @@
         var target;
         var row;
         var column;
-        for(var i=0; i<4; i++) {
+        for(var i=0; i<3; i++) {
           target = freeBoxes.pop();
           row = target[0];
           column = target[1];
