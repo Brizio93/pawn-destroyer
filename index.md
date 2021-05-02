@@ -395,7 +395,6 @@
         card.style.border = "1px solid red";
         currentCard = card.src.split("/")[5].split(".")[0];
         currentHandCard = card.id;
-        console.log(currentHandCard);
       }
       async function put(row, column) {
         if(grid[row][column]=="empty-pawn" && currentCard!="empty-attack" && waitFlag==false) {
