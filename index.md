@@ -483,27 +483,27 @@
       }
       function diagonalAttack(row, column) {
         var i = 1;
-        do {
+        while(grid[row-i][column-i]!="sentinel") {
           destroyPawn(row-i,column-i);
           i++;
-        } while(grid[row-i][column-i]!="sentinel");
+        }
         i = 1
-        do {
+        while(grid[row+i][column+i]!="sentinel") {
           destroyPawn(row+i,column+i);
           i++;
-        } while(grid[row+i][column+i]!="sentinel");
+        }
       }
       function antiDiagonalAttack(row, column) {
         var i = 1;
-        do {
+        while(grid[row-i][column+i]!="sentinel") {
           destroyPawn(row-i,column+i);
           i++;
-        } while(grid[row-i][column+i]!="sentinel");
+        }
         i = 1
-        do {
+        while(grid[row+i][column-i]!="sentinel") {
           destroyPawn(row+i,column-i);
           i++;
-        } while(grid[row+i][column-i]!="sentinel");
+        }
       }
       function destroyPawn(row, column) {
         if(grid[row][column]=="dark-pawn") {
