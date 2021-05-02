@@ -410,7 +410,7 @@
           extinguishFlames();
           if(endGameFlag==2) {
             document.getElementById(currentHandCard).src = "assets/empty-attack.jpg";
-            document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
+            document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points*points*Math.sign(points);
           }
           else {
             alliesEvanescence();
@@ -418,13 +418,13 @@
             if(deck.length==0) {
               currentCard = "empty-attack";
               document.getElementById(currentHandCard).src = "assets/empty-attack.jpg";
-              document.getElementById("info").innerHTML = "Carte nel mazzo finite - Punteggio: " + points;
+              document.getElementById("info").innerHTML = "Carte nel mazzo finite - Punteggio: " + points*points*Math.sign(points);
               endGameFlag++;
             }
             else {
               currentCard = deck.pop();
               document.getElementById(currentHandCard).src = "assets/" + currentCard + ".jpg";
-              document.getElementById("info").innerHTML = "Carte nel mazzo: " + deck.length + " - Punteggio: " + points;
+              document.getElementById("info").innerHTML = "Carte nel mazzo: " + deck.length + " - Punteggio: " + points*points*Math.sign(points);
             }
             waitFlag = false;
           }
