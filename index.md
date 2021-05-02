@@ -513,8 +513,9 @@
           if(time==0) {
             row = allies[i][0];
             column = allies[i][1];
-            unmarkBox(row,column);
+            grid[row][column] = "empty-pawn";
             document.getElementById("r"+row+"c"+column).src = "assets/empty-pawn.jpg";
+            unmarkBox(row,column);
             allies.splice(i, 1);
           }
           else {
