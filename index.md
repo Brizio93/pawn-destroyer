@@ -388,6 +388,7 @@
       ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
       ["sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel","sentinel"],
       ];
+      var allies = [];
       enemySpawn();
       function select(card) {
         document.getElementById("handCard1").style.border = "";
@@ -402,6 +403,7 @@
           waitFlag = true;
           grid[row][column] = "red-pawn";
           markBox(row, column);
+          allies.push([row, column, 5]);
           document.getElementById("r"+row+"c"+column).src = "assets/red-pawn.jpg";
           useAttack(row, column);
           await new Promise(r => setTimeout(r, 500));
@@ -411,6 +413,7 @@
             document.getElementById("info").innerHTML = "Fine del gioco. Punteggio totale: " + points;
           }
           else {
+            alliesEvanescence();
             enemySpawn();
             if(deck.length==0) {
               currentCard = "empty-attack";
@@ -502,14 +505,31 @@
           document.getElementById("r"+row+"c"+column).src = "assets/dark-pawn.jpg";
         }
       }
-      function markBox(row, column){
+      function alliesEvanescence() {
+        var row;
+        var column;
+        for(var i=0; i<allies.length; i++) {
+          time = allies[i][2];
+          if(time==0) {
+            row = allies[i][0];
+            column = allies[i][1];
+            unmarkBox(row,column);
+            document.getElementById("r"+row+"c"+column).src = "assets/empty-pawn.jpg";
+            allies.splice(i, 1);
+          }
+          else {
+            allies[i][2] = time-1;
+          }
+        }
+      }
+      function markBox(row, column) {
         for(var i=0; i<freeBoxes.length; i++) {
           if(freeBoxes[i][0]==row && freeBoxes[i][1]==column) {
             freeBoxes.splice(i, 1);
           }
         }
       }
-      function unmarkBox(row, column){
+      function unmarkBox(row, column) {
         freeBoxes.push([row,column]);
         freeBoxes = shuffle(freeBoxes);
       }
