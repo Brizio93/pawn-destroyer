@@ -354,11 +354,11 @@
       var points = 0;
       document.getElementById("info").innerHTML = "Carte nel mazzo: 27 - Punteggio: 0";
       var deck = [
-        "big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack",
-        "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack",
-        "horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack",
-        "vertical-attack","vertical-attack","vertical-attack","vertical-attack","vertical-attack","vertical-attack",
-        "cross-attack","cross-attack","cross-attack","cross-attack","cross-attack","cross-attack"
+        "big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","big-circolar-attack","diagonal-attack",
+        "circolar-attack","circolar-attack","circolar-attack","circolar-attack","circolar-attack","diagonal-attack",
+        "horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack","horizontal-attack","diagonal-attack",
+        "vertical-attack","vertical-attack","vertical-attack","vertical-attack","vertical-attack","diagonal-attack",
+        "cross-attack","cross-attack","cross-attack","cross-attack","cross-attack","diagonal-attack"
       ]
       deck = shuffle(deck);
       var currentCard = deck.pop();
@@ -447,6 +447,9 @@
           horizontalAttack(row, column);
           verticalAttack(row, column);
         }
+        if(currentCard=="diagonal-attack") {
+          diagonalAttack(row, column);
+        }
       }
       function circolarAttack(row, column, radius) {
         for(var i=row-radius; i<=row+radius; i++) {
@@ -470,6 +473,18 @@
             destroyPawn(i,column);
           }
         }
+      }
+      function diagonalAttack(row, column) {
+        var i = 1;
+        do {
+          destroyPawn(row-i,column-i);
+          i++;
+        } while(grid[row-i][column-i]!="sentinel");
+        i = 1
+        do {
+          destroyPawn(row+i,column+i);
+          i++;
+        } while(grid[row+i][column+i]!="sentinel");
       }
       function destroyPawn(row, column) {
         if(grid[row][column]=="dark-pawn") {
