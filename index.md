@@ -493,7 +493,7 @@
           }
         }
       }
-      function enemySpawn() {  //generate up to 3 new enemies in random positions
+      function enemySpawn() {
         var target;
         var row;
         var column;
